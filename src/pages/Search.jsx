@@ -1,12 +1,14 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import ColorSearch from "../components/ColorSearch";
+import CreateProjectButton from "../components/CreateProjectButton";
 
 function Search() {
   return (
-    <Box>
+    <VStack spacing={8}>
       <ColorSearch />
-    </Box>
+      <CreateProjectButton />
+    </VStack>
   );
 }
 
