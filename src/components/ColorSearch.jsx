@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Button, VStack, HStack, Text } from "@chakra-ui/react";
+import { Input, Button, VStack, HStack, Text, Box } from "@chakra-ui/react";
 
 function ColorSearch() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,10 +35,9 @@ function ColorSearch() {
       {searchResults.length > 0 && (
         <VStack>
           {searchResults.map((color) => (
-            <HStack key={color.hex}>
-              <Text>{color.name}</Text>
-              <Text>{color.hex}</Text>
-            </HStack>
+            <Box key={color.hex} bg={color.hex} p={4} m={2} borderRadius="md" boxShadow="md">
+              <Text color={color.luminanceWCAG < 0.5 ? 'white' : 'black'}>{color.name}</Text>
+            </Box>
           ))}
         </VStack>
       )}
